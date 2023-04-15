@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.wrapper {
+    /* background: grey; */
+    color: grey;
+    /* padding: 10px; */
+    display: grid;
+    gap: 0.5rem;
+
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+        'h1 h1 h1'
+        'header header header'
+        'banner banner offer1'
+        'banner banner offer2 '
+        'side-menu main main'
+        'recent main main'
+        'tags main main'
+        'footer footer footer';
+}
+
+.wrapper > * {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+header {
+    background: green;
+    color: grey;
+    grid-area: header;
+}
+
+h1 {
+    background: purple;
+    grid-area: h1;
+}
+
+.banner {
+    background: linear-gradient(to right, indigo, blue, indigo);
+    grid-area: banner;
+    min-height: 20vh;
+}
+.offer1 {
+    background: yellow;
+    grid-area: offer1;
+}
+.offer2 {
+    background: black;
+    grid-area: offer2;
+}
+.side-menu {
+    background: cyan;
+    grid-area: side-menu;
+}
+.recent {
+    background: brown;
+    grid-area: recent;
+}
+.tags {
+    background: orange;
+    grid-area: tags;
+}
+.main {
+    background: silver;
+    grid-area: main;
+}
+footer {
+    background: purple;
+    grid-area: footer;
+}
+
+/* ipads 1024 mobile 576 */
+
+/* Ipads */
+@media (576px < width <=950px) {
+    .wrapper {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            'h1 h1'
+            'header header'
+            'banner banner'
+            'offer1 offer2'
+            'side-menu side-menu'
+            'main main'
+            'recent tags'
+            'footer footer';
+    }
+
+    .main {
+        min-height: 15vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'h1'
+            'header'
+            'banner'
+            'offer1'
+            'offer2'
+            'side-menu'
+            'main'
+            'recent'
+            ' tags'
+            ' footer';
+    }
+}
